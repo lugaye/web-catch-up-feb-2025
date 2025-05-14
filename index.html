@@ -6,10 +6,34 @@
     </head>
     <body>
         <h1 id="h_one" class="headings">Welcome to the Introduction to Javascript</h1>
-        <h2 class="headings">INteractivity and DOM</h2>
+        <h2 class="headings">Interactivity and DOM</h2>
         <p id="p_one">This is a simple HTML page to demonstrate the use of Javascript.</p>
+        <img id="img_1" src="bird.jpg" alt="Bird" id="" width="200" height="200">
+        <button id="btn_1">Click Me</button>
     </body>
     <script>
+        //modify the content of the h1 element
        document.getElementById("h_one").innerHTML = "Javascript DOM Manipulation";
+       //modify attribute/properties of the p element
+       document.getElementById("p_one").style.color = "blue";
+       //modify the content of the image element
+       document.getElementsByTagName("img")[0].src = "balloon.jpg";
+
+       document.getElementById("img_1").style.width = "300px";
+       document.getElementById("img_1").style.height = "200px";
+
+       //dynamically create a new element
+       var newElement = document.createElement("p");
+       newElement.innerText = "This is a new paragraph created using Javascript.";
+       newElement.style.color = "red";
+       //append the new element to the body
+       document.body.appendChild(newElement);
+       //dynamically remove an element
+       let elementToRemove = document.getElementsByClassName("headings")[1];
+       elementToRemove.remove();
+       //add an event listener to the button
+       document.getElementById("btn_1").addEventListener("click", function() {
+           alert("Button was clicked!");
+       });  
     </script>
 </html>
