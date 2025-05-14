@@ -9,7 +9,12 @@
         <h2 class="headings">Interactivity and DOM</h2>
         <p id="p_one">This is a simple HTML page to demonstrate the use of Javascript.</p>
         <img id="img_1" src="bird.jpg" alt="Bird" id="" width="200" height="200">
+        <br />
         <button id="btn_1">Click Me</button>
+        <hr>
+        <textarea id="text_area" maxlength="100" rows="4" cols="50"></textarea>
+        <p>Characters left:<span id="counter">100</span></p>
+
     </body>
     <script>
         //modify the content of the h1 element
@@ -34,6 +39,18 @@
        //add an event listener to the button
        document.getElementById("btn_1").addEventListener("click", function() {
            alert("Button was clicked!");
-       });  
+       }); 
+
+       //add() - add a new class to the element
+       //remove() - remove a class from the element
+       //toggle() - add or remove a class from the element
+
+       let textArea = document.getElementById("text_area");
+       let counter = document.getElementById("counter");
+
+       textArea.addEventListener("input", function() {
+        let remainingChars = 100 - textArea.value.length;
+        counter.innerText = remainingChars;         
+       })
     </script>
 </html>
